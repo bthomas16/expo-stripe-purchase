@@ -1,6 +1,12 @@
 # expo-stripe-purchase
 
+[GitHub Repo](https://github.com/bthomas16/expo-stripe-purchase)
+
+[NPM Registry](https://www.npmjs.com/package/expo-stripe-purchase)
+
 Make purchases directly in your app without ejecting from the Expo Managed Workflow. Avoid all the bugs of other webview solutions, this repo is the product of spending hours fixing other, deprecated solutions.
+
+Return a simple token from the Stripe API on succesfull checkouts.
 
 This repo would not be possible without the hard work of [this repo](https://github.com/briansztamfater/expo-stripe-checkout).
 
@@ -58,3 +64,6 @@ render () {
     )
 }
 ```
+
+
+For more information please see the [Stripe Docs](https://stripe.com/docs/payments/checkout)

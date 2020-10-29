@@ -10,7 +10,7 @@ type Props = {
     currency: string;
     allowRememberMe: boolean;
     email: string;
-    style: object;
+    style?: object;
     onClose: () => void;
     onPaymentSuccess: (token: string) => void;
 }
@@ -30,7 +30,7 @@ const jsCode = `(function() {
   })();`;
 
 
-class StripeCheckoutCreditsModal extends React.Component<Props> {
+class ExpoStripePurchase extends React.Component<Props> {
 
 
   onClose = () => {
@@ -87,4 +87,4 @@ class StripeCheckoutCreditsModal extends React.Component<Props> {
     }
   };
 
-  export default StripeCheckoutCreditsModal;
+  export default ExpoStripePurchase;

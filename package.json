@@ -1,0 +1,20 @@
+{
+  "name": "expo-stripe-purchase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "react-native-webview": "^10.10.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.7.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepbulish": "tsc"
+  },
+  "keywords": [],
+  "author": "Brent Thomas",
+  "license": "MIT"
+}

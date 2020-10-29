@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 type Props = {
+    publicKey: string;
     storeName: string;
     description: string;
     imageUrl: string;
@@ -56,7 +57,7 @@ class ExpoStripePurchase extends React.Component<Props> {
         source={{ html: `<script src="https://checkout.stripe.com/checkout.js"></script>
             <script>
             var handler = StripeCheckout.configure({
-            key: '// FILL HERE',
+            key: '${props.publicKey}',
             image: '${props.imageUrl}',
             locale: 'auto',
             token: function(token) {

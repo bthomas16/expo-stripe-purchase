@@ -13,6 +13,7 @@ This repo would not be possible without the hard work of (https://github.com/bri
 
 | Props        | Type  | Description  | Required |
 | :------------- |:------:| :-------- | -------- |
+| publicKey   | string | Api Key to connect to Stripe (i.e. pk_kjfsdg_shffdg)       | true |
 | storeName   | string | Store name to display        | true |
 | description | string |   Description of the purchase being made       | true |
 | imageUrl    | string |    Store image url to display      | true |

@@ -2,7 +2,7 @@
 
 Make purchases directly in your app without ejecting from the Expo Managed Workflow. Avoid all the bugs of other webview solutions, this repo is the product of spending hours fixing other, deprecated solutions.
 
-This repo would not be possible without the hard work of (https://github.com/briansztamfater/expo-stripe-checkout "this repo") by @briansztamfater.
+This repo would not be possible without the hard work of [this repo](https://github.com/briansztamfater/expo-stripe-checkout).
 
 # Important Usage
 

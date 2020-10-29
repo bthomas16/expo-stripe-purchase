@@ -1,8 +1,7 @@
-import React from 'react';
 import { Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-type Props = {
+type PropsModel = {
     publicKey: string;
     storeName: string;
     description: string;
@@ -17,36 +16,20 @@ type Props = {
 }
 
 const jsCode = `(function() {
-    var originalPostMessage = window.postMessage;
+  var originalPostMessage = window.postMessage;
 
-    var patchedPostMessage = function(message, targetOrigin, transfer) {
-      originalPostMessage(message, targetOrigin, transfer);
-    };
+  var patchedPostMessage = function(message, targetOrigin, transfer) {
+    originalPostMessage(message, targetOrigin, transfer);
+  };
 
-    patchedPostMessage.toString = function() {
-      return String(Object.hasOwnProperty).replace('hasOwnProperty', 'postMessage');
-    };
+  patchedPostMessage.toString = function() {
+    return String(Object.hasOwnProperty).replace('hasOwnProperty', 'postMessage');
+  };
 
-    window.postMessage = patchedPostMessage;
-  })();`;
-
-
-class ExpoStripePurchase extends React.Component<Props> {
-
-
-  onClose = () => {
-    // go back
-    return;
-  }
-
-  onPaymentSuccess = async (token: string) => {
-    // save token to backend
-    // will close webview automatically (calls onClose())
-    return await null;
-  }
+  window.postMessage = patchedPostMessage;
+})();`;
     
-    render() {
-    const props = this.props;
+ const ExpoStripePurchase = (props: PropsModel) => {
     return (
         <WebView
         originWhitelist={['*']}
@@ -84,8 +67,7 @@ class ExpoStripePurchase extends React.Component<Props> {
         style={{ flex: 1, ...props.style }}
         scalesPageToFit={Platform.OS === 'android'}
     />
-    );
-    }
-  };
+    )
+  }
 
   export default ExpoStripePurchase;

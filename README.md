@@ -14,6 +14,7 @@ This repo would not be possible without the hard work of [this repo](https://git
 
 1. This component works best when returned as the primary component / view. Do not try to nest it within other components.
 2. Do not pass decimals into the component. Instead, pass numbers expecting the decimal to be in effect after 2 numbers (component will display this properly)
+3. This is intended to be used as a full screen checkout page, 
 
 # Props
 
@@ -29,7 +30,7 @@ This repo would not be possible without the hard work of [this repo](https://git
 | email    | string |    prepopulatedemail        | true |
 | style    | object |    an object containing styles (i.e width: 100)        | false |
 | onClose    | function |    called when webview is closed        | true |
-| onPaymentSucess    | function |    called after successfull payment made (token: string) =>        | true |
+| onPaymentSuccess    | function |    called after successfull payment made (token: string) =>        | true |
 
 
 # Example
@@ -38,7 +39,7 @@ This repo would not be possible without the hard work of [this repo](https://git
 import ExpoStripePurchase from 'expo-stripe-purchase';
 
 onClose = () => {
-    // handle close (navigate back?)
+    // handle close (i.e. navigate back)
 }
 
 onPaymentSuccess = (token: string) => {
@@ -58,8 +59,8 @@ render () {
             allowRememberMe={true}
             prepopulatedEmail="example@example.com"
             onClose={this.onClose}
-            onPaymentSuccess={this.onPaymentSuccess}
-            style={{flex: 1}}
+            onPaymentSuccess={(token: string) => this.onPaymentSuccess(token)}
+            style={{width: 1000, alignSelf: 'center'}}
         />
     )
 }

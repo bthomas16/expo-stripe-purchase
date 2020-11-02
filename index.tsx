@@ -1,5 +1,5 @@
 import { WebView } from 'react-native-webview';
-import React from 'react';
+import * as React from 'react';
 
 const jsCode = `(function() {
   var originalPostMessage = window.postMessage;

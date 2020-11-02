@@ -67,8 +67,4 @@ render () {
 ```
 
 
-<<<<<<< HEAD
 For more information please see the [Stripe Docs](https://stripe.com/docs/payments/checkout)
-=======
-For more information please see the [Stripe Docs](https://stripe.com/docs/payments/checkout)
->>>>>>> 879cfe50f27ddf91fdc760ad24333fd8325a72c0

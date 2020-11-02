@@ -1,19 +1,5 @@
-import { Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
-
-type PropsModel = {
-    publicKey: string;
-    storeName: string;
-    description: string;
-    imageUrl: string;
-    amount: number;
-    currency: string;
-    allowRememberMe: boolean;
-    email: string;
-    style?: object;
-    onClose: () => void;
-    onPaymentSuccess: (token: string) => void;
-}
+import React from 'react';
 
 const jsCode = `(function() {
   var originalPostMessage = window.postMessage;
@@ -28,8 +14,24 @@ const jsCode = `(function() {
 
   window.postMessage = patchedPostMessage;
 })();`;
-    
- const ExpoStripePurchase = (props: PropsModel) => {
+
+type Props = {
+    publicKey: string;
+    storeName: string;
+    description: string;
+    imageUrl: string;
+    amount: number;
+    currency: string;
+    allowRememberMe: boolean;
+    email: string;
+    style?: object;
+    onClose: () => void;
+    onPaymentSuccess: (token: string) => void;
+}
+  
+export default class ExpoStripePurchase extends React.Component<Props> {
+  render() {
+    const props = this.props;
     return (
         <WebView
         originWhitelist={['*']}
@@ -63,11 +65,9 @@ const jsCode = `(function() {
             });
             };
             </script>`, baseUrl: ''}}
-        onMessage={event => event.nativeEvent.data === "WINDOW_CLOSED" ? props.onClose() : props.onPaymentSuccess(event.nativeEvent.data)}
+        onMessage={(event: any) => event.nativeEvent.data === "WINDOW_CLOSED" ? props.onClose() : props.onPaymentSuccess(event.nativeEvent.data)}
         style={{ flex: 1, ...props.style }}
-        scalesPageToFit={Platform.OS === 'android'}
+        scalesPageToFit={true}
     />
-    )
-  }
-
-  export default ExpoStripePurchase;
+  )}
+}

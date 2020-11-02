@@ -1,20 +1,34 @@
 {
   "name": "expo-stripe-purchase",
-  "version": "1.0.5",
+  "version": "1.1.2",
   "description": "Make purchases directly in your app without ejecting from the Expo Managed Workflow. Avoid all the bugs of other webview solutions, this repo is the product of spending hours fixing other, deprecated solutions.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
+    "react": "16.13.1",
+    "react-native": "^0.63.3",
     "react-native-webview": "^10.10.0"
+  },
+  "peerDependencies": {
+    "react": "16.13.1"
   },
   "devDependencies": {
     "typescript": "^2.7.2"
   },
   "scripts": {
-    "build": "tsc",
-    "prepbulish": "tsc"
+    "build": "tsc"
   },
-  "keywords": ["expo stripe", "managed workflow", "expo purchase", "stripe checkout", "stripe purchase", "stripe", "expo"],
+  "keywords": [
+    "expo stripe",
+    "react native",
+    "react native stripe",
+    "managed workflow checkout",
+    "expo purchase",
+    "expo checkout",
+    "stripe checkout",
+    "stripe purchase",
+    "stripe"
+  ],
   "author": "Brent Thomas",
   "license": "MIT"
 }

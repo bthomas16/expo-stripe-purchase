@@ -24,16 +24,18 @@ This repo would not be possible without the hard work of [this repo](https://git
 | storeName   | string | Store name to display        | true |
 | description | string |   Description of the purchase being made       | true |
 | imageUrl    | string |    Store image url to display      | true |
-| amount    | number |    amount to charge       | true |
-| currency    | string |    'USD'        | true |
-| allowRememberMe    | boolean |    allow for easier future checkouts        | true |
-| email    | string |    prepopulatedemail        | true |
-| style    | object |    an object containing styles (i.e width: 100)        | false |
-| onClose    | function |    called when webview is closed        | true |
-| onPaymentSuccess    | function |    called after successfull payment made (token: string) =>        | true |
+| amount    | number |    Amount to charge       | true |
+| currency    | string |    Type of currency to be used       | true |
+| allowRememberMe    | boolean |    Allow for easier future checkouts        | true |
+| email    | string |    Pre-populated email address     | true |
+| style    | object |    Style the webview, not the inner-components (i.e. cannot style the button / colors)       | false |
+| onClose    | function |    Called when webview is closed        | true |
+| onPaymentSuccess    | function |    Called after successfull payment made (token: string) =>        | true |
 
 
 # Example
+
+![Checkout Webview Demo](https://raw.githubusercontent.com/briansztamfater/expo-stripe-checkout/HEAD/expo-stripe-checkout-demo.gif)
 
 ```
 import ExpoStripePurchase from 'expo-stripe-purchase';
@@ -57,7 +59,7 @@ render () {
             description="Clever product description."
             currency="USD"
             allowRememberMe={true}
-            prepopulatedEmail="example@example.com"
+            prepopulatedEmail="clever_email@clever.com"
             onClose={this.onClose}
             onPaymentSuccess={(token: string) => this.onPaymentSuccess(token)}
             style={{width: 1000, alignSelf: 'center'}}

@@ -60,7 +60,7 @@ export default class ExpoStripePurchase extends React.Component<Props> {
                 allowRememberMe: ${props.allowRememberMe},
                 email: '${props.email}',
                 closed: function() {
-                  window.ReactNativeWebView.postMessage("WINDOW_CLOSED", "*");
+                  window.ReactNativeWebView.postMessage("WINDOW_CLOSED");
                 }
             });
             };

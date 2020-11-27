@@ -13,7 +13,7 @@ This repo would not be possible without the hard work of [this repo](https://git
 # Important Usage
 
 1. This component works best when returned as the primary component / view. Do not try to nest it within other components.
-2. Do not pass decimals into the component. Instead, pass numbers expecting the decimal to be in effect after 2 numbers (component will display this properly)
+2. Do not pass decimals into the component. Instead, pass numbers with the hundreth's place included.
 3. This is intended to be used as a full screen checkout page, if that is not your intended usage - you may need to clone this repo and fiddle with the webview yourself (webviews are difficult to use like this in my experience, please show me I am wrong)
 
 # Props

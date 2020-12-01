@@ -33,8 +33,8 @@ export default class ExpoStripePurchase extends React.Component<Props> {
   render() {
     const props = this.props;
     return (
-        <WebView
-        originWhitelist={['*']}
+      <WebView
+        originWhitelist={["*"]}
         javaScriptEnabled={true}
         scrollEnabled={false}
         bounces={false}
@@ -46,7 +46,7 @@ export default class ExpoStripePurchase extends React.Component<Props> {
             image: '${props.imageUrl}',
             locale: 'auto',
             token: function(token) {
-                window.ReactNativeWebView.postMessage(token.id, token.id);
+                window.ReactNativeWebView.postMessage(token.id);
             },
             });
 

@@ -52,7 +52,7 @@ export default class ExpoStripePurchase extends React.Component<Props> {
 
             window.onload = function() {
             handler.open({
-                name: 'SOTC',
+                name: '${props.storeName}',
                 description: '${props.description}',
                 image: '${props.imageUrl}',
                 amount: ${props.amount},
